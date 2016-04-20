@@ -1,0 +1,31 @@
+{
+  "name": "polymer",
+  "version": "1.0.0",
+  "description": "Simple polymer 1.0 weather widget example",
+  "main": "GulpFile.js",
+  "dependencies": {
+    "fs": "^0.0.2",
+    "gulp": "^3.9.1",
+    "gulp-crisper": "^1.0.0",
+    "gulp-load-plugins": "^1.2.2",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-uglify": "^1.5.3",
+    "gulp-vulcanize": "^6.1.0",
+    "run-sequence": "^1.1.5",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flyfilly/polymer-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flyfilly/polymer-example/issues"
+  },
+  "homepage": "https://github.com/flyfilly/polymer-example"
+}

@@ -1,0 +1,69 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="weather-item">
+  <template>
+    <style>
+      @font-face {
+        font-family: 'MeteoconsRegular';
+        src: url('meteocons-font/FONT/Font-face/meteocons-webfont.eot');
+        src: url('meteocons-font/FONT/Font-face/meteocons-webfont.eot?#iefix') format('embedded-opentype'),
+           url('meteocons-font/FONT/Font-face/meteocons-webfont.woff') format('woff'),
+           url('meteocons-font/FONT/Font-face/meteocons-webfont.ttf') format('truetype'),
+           url('meteocons-font/FONT/Font-face/meteocons-webfont.svg#MeteoconsRegular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+      .icon:before {
+         font-family: 'MeteoconsRegular';
+         content: attr(data-icon);
+       }
+       .forecast { text-align: center; }
+       h5 { margin : 5px; }
+      :host { display : block; }
+      .forecast-icon { font-size: 2em; }
+    </style>
+    <div class="forecast">
+      <div><h5>{{city}}</h5></div>
+      <div><h5>{{date}}</h5></div>
+      <div class="forecast-icon">
+        <b class="icon" data-icon$="{{icon}}"></b>
+      </div>
+      <div class="">
+        <h5>{{description}}</h5>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer( {
+      is               : 'weather-item',
+
+      properties       : {
+        city           : String,
+        date           : {
+          type         : String,
+          notify       : true,
+          value        : function( ) {
+            var dt = new Date( );
+            return ( dt.getMonth( ) + 1 ) + "/" + dt.getDate( ) + "/" + dt.getFullYear( );
+          }
+        },
+        icon           : {
+          type         : String,
+          notify       : true,
+          value        : ")"
+        },
+        description    : {
+          type         : String,
+          notfiy       : true,
+          value        : "A Default Value"
+        }
+  		},
+
+      created          : function( ) { },
+      ready            : function( ) { },
+      attached         : function( ) { },
+      detached         : function( ) { },
+      attributeChanged : function( name, type ) { },
+    } );
+  </script>
+</dom-module>
