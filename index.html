@@ -4,37 +4,21 @@
     <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
     <link rel="import" href="elements/elements.html"></link>
     <style media="screen">
-      .cir { border: solid 1px; font-family: "Lucida Console", Monaco, monospace; }
-      google-map {
-        height: 750px;
-      }
-      .flex-horizontal {
-        @apply(--layout-horizontal);
-      }
-      .flexchild {
-        @apply(--layout-flex);
-      }
+      .cir { border : solid 1px; font-family : "Lucida Console", Monaco, monospace; }
+      google-map { height : 750px; }
     </style>
   </head>
   <body>
     <template is="dom-bind" id="app">
       <style is="custom-style">
-        .flex-horizontal {
-          @apply(--layout-horizontal);
-        }
-        .flexchild {
-          @apply(--layout-flex);
-        }
+        .flex-horizontal { @apply(--layout-horizontal); }
+        .flexchild { @apply(--layout-flex); }
       </style>
       <div class="container flex-horizontal">
-        <div>
-          <weather-widget city="{{city}}"></weather-widget>
-        </div>
-        <div class="flexchild">
-          <paper-material elevation="1">
-            <google-map latitude="{{city.coord.lat}}" longitude="{{city.coord.lon}}" zoom="11"></google-map>
-          </paper-material>          
-        </div>
+        <weather-widget city="{{city}}"></weather-widget>
+        <paper-material elevation="1" class="flexchild">
+          <google-map latitude="{{city.coord.lat}}" longitude="{{city.coord.lon}}" zoom="11"></google-map>
+        </paper-material>
       </div>
         <!-- example of polymer element existing independently & bound to another element -->
         <!-- <weather-item city="{{city.name}}" class="cir"></weather-item> -->
