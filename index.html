@@ -6,6 +6,7 @@
     <style media="screen">
       .cir { border : solid 1px; font-family : "Lucida Console", Monaco, monospace; }
       google-map { height : 750px; }
+      #drawer { min-width: 400px; }
     </style>
   </head>
   <body>
@@ -14,12 +15,16 @@
         .flex-horizontal { @apply(--layout-horizontal); }
         .flexchild { @apply(--layout-flex); }
       </style>
-      <div class="container flex-horizontal">
-        <weather-widget city="{{city}}"></weather-widget>
-        <paper-material elevation="1" class="flexchild">
-          <google-map latitude="{{city.coord.lat}}" longitude="{{city.coord.lon}}" zoom="11"></google-map>
-        </paper-material>
-      </div>
+      <paper-drawer-panel id="drawerPanel">
+        <div id="drawer" class="menuPanel container" drawer>
+          <weather-widget city="{{city}}"></weather-widget>
+        </div>
+        <div main>
+          <paper-material elevation="1" class="flexchild">
+            <google-map latitude="{{city.coord.lat}}" longitude="{{city.coord.lon}}" zoom="11"></google-map>
+          </paper-material>
+        </div>
+      </paper-drawer-panel>
         <!-- example of polymer element existing independently & bound to another element -->
         <!-- <weather-item city="{{city.name}}" class="cir"></weather-item> -->
     </template>
